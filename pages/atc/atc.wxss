@@ -1,0 +1,31 @@
+.atc_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.atc_row {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+}
+.atc_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height:100rpx;
+    align-items: center;
+}
+.atc_column {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+}
+.atc_item {
+    height: 100rpx;
+    width: 33.3%;
+    line-height: 100rpx;
+    align-items: center;
+    margin:0rpx 10rpx 20rpx 10rpx; 
+    text-align: center;
+    box-sizing: border-box;
+}

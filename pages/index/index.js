@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    motto: '不跟你多BB',
+    motto: '测试入口--计算器',
     userInfo: {}
   },
   //事件处理函数

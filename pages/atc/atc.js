@@ -26,6 +26,7 @@ Page({
   onUnload:function(){
     // 生命周期函数--监听页面卸载
    console.log('onUnload')
+   atc_number.cleanUp()
   },
   onPullDownRefresh: function() {
     // 页面相关事件处理函数--监听用户下拉动作
@@ -41,6 +42,8 @@ Page({
     var value = e['target']['dataset']['value']
     console.log(e)
     console.log(value)
+    var display_value = atc_number.getNumberDisplay(value)
+    this.setData({ result : display_value })
   },
 
   onShareAppMessage: function() {

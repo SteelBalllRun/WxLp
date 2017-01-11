@@ -1,4 +1,5 @@
 var atc_number = require("./atc_number.js")
+var atc_relation = require("./atc_relationship.js")
 Page({
   data:{
     result:'null',
@@ -13,7 +14,7 @@ Page({
     // 生命周期函数--监听页面初次渲染完成
     console.log('onReady')
     wx.hideNavigationBarLoading()
-    this.setData({result:'hehehe'})
+    this.setData({result:'answer here'})
   },
   onShow:function(){
     // 生命周期函数--监听页面显示
@@ -42,7 +43,8 @@ Page({
     var value = e['target']['dataset']['value']
     console.log(e)
     console.log(value)
-    var display_value = atc_number.getNumberDisplay(value)
+    // var display_value = atc_number.getNumberDisplay(value)
+    var display_value = atc_relation.getStrinDisplay(value)
     this.setData({ result : display_value })
   },
 

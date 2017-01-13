@@ -4,6 +4,7 @@ var app = getApp()
 Page({
   data: {
     motto: '测试入口--计算器',
+    motto_second: '测试入口--亲族计算器',
     userInfo: {}
   },
   //事件处理函数
@@ -13,9 +14,14 @@ Page({
     })
   },
 
-  bindNameTap: function() {
+  bindEntranceTap: function() {
     wx.navigateTo({
-      url: '../atc/atc'
+      url: '../atc/atc?atc_type=atc_number'
+    })
+  },
+  bindEntrance2Tap: function() {
+    wx.navigateTo({
+      url: '../atc/atc?atc_type=atc_relation'
     })
   },
 

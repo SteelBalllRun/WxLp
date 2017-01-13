@@ -18,11 +18,14 @@ function getNumberDisplay(input){
                 //make answer
                 optionTop = makeListResult(optionList,optionTop)
                 display = optionTop
-            } else {
+            } else if (isInputOpt(input) ^ isInputOpt(optionTop)) {
                 optionTop = makeListResult(optionList,optionTop)
                 optionList.push(optionTop)
                 optionTop = input
                 display = optionTop
+            } else {
+                optionTop =  input;
+                display = optionTop;
             }
         }
         optionList.push(optionTop)

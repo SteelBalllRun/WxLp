@@ -1,20 +1,38 @@
 var atc_number = require("./atc_number.js")
 var atc_relation = require("./atc_relationship.js")
+var currentType 
 Page({
   data:{
     result:'null',
-    cbuffer:[]
+    atc_type:''
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
     console.log('onLoad')
     wx.showNavigationBarLoading()
+    currentType = options.atc_type
+    this.setData({atc_type:currentType})
+
+    if (currentType == "atc_relation") {
+      wx.setNavigationBarTitle({
+        title: "亲族计算器",
+        success: function(res) {
+          
+        }
+      })
+    }else if (currentType == "atc_number") {
+      wx.setNavigationBarTitle({
+        title: "计算器",
+        success: function(res) {
+        }
+      })
+    } 
   },
   onReady:function(){
     // 生命周期函数--监听页面初次渲染完成
     console.log('onReady')
     wx.hideNavigationBarLoading()
-    this.setData({result:'answer here'})
+    this.setData({result:'answer here',atc_type:currentType})
   },
   onShow:function(){
     // 生命周期函数--监听页面显示
@@ -43,9 +61,13 @@ Page({
     var value = e['target']['dataset']['value']
     console.log(e)
     console.log(value)
-    // var display_value = atc_number.getNumberDisplay(value)
-    var display_value = atc_relation.getStrinDisplay(value)
-    this.setData({ result : display_value })
+    var display_value = ""
+    if (currentType == "atc_relation") {
+      display_value = atc_relation.getStrinDisplay(value)
+    }else if (currentType == "atc_number") {
+      display_value = atc_number.getNumberDisplay(value)
+    } 
+    this.setData({ result : display_value ,atc_type:currentType})
   },
 
   onShareAppMessage: function() {
